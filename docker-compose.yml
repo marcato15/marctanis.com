@@ -1,0 +1,17 @@
+version: "3"
+networks:
+  default:
+    external:
+      name: dockerbox
+services:
+  webpack:
+    build: .
+    ports:
+      - 80
+    environment:
+      - VIRTUAL_HOST=marc.test
+    extra_hosts:
+        - "marc.test:0.0.0.0"
+    restart: unless-stopped
+    volumes:
+      - ./src:/app/src:delegated
