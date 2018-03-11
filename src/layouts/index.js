@@ -12,10 +12,13 @@ const BodyWrapper = styled.div`
   padding: 0px 1.0875rem 1.45rem;
   padding-top: 0;
 `
+const date = Math.floor(
+  (new Date() - new Date('09/01/2004')) / (60 * 60 * 24 * 365 * 1000),
+)
 const TemplateWrapper = ({ children }) => (
   <div>
     <Helmet
-      title="Marc Tanis - Crafting amazing experiences on the web since 2004"
+      title={`Marc Tanis - Crafting amazing experiences on the web for the last ${date}+ years`}
       meta={[
         {
           name: 'description',
